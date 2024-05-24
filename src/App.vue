@@ -58,7 +58,7 @@ const search = async () => {
       <ul class="list-none">
         <li v-for="(result, index) in results" :key="index" class="mb-4">
           <h3 class="text-lg font-bold">{{ result.title }}</h3>
-          <p><a :href="result.url">{{ result.url }}</a></p>
+          <p><a :href="result.url" target="_blank">{{ result.url }}</a></p>
         </li>
       </ul>
     </div>
