@@ -17,7 +17,7 @@ const search = async () => {
 
   try {
     const response = await fetch(
-      `http://localhost:3000/api/search?q=${encodeURIComponent(query.value)}`,
+      `/api/search?q=${encodeURIComponent(query.value)}`,
     );
     const data = await response.json();
     results.value = data.web.results;
