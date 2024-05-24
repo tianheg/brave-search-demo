@@ -31,21 +31,36 @@ const search = async () => {
 </script>
 
 <template>
-
-  <h1>Brave Search</h1>
-  <div>
-    <input type="text" v-model="query" placeholder="Enter your search query">
-    <button @click="search">Search</button>
-  </div>
-  <div v-if="loading">Loading...</div>
-  <div v-if="error">{{ error }}</div>
-  <div v-if="results.length > 0">
-    <h2>Search Results</h2>
-    <ul>
-      <li v-for="(result, index) in results" :key="index">
-        <h3>{{ result.title }}</h3>
-        <p><a :href="result.url">{{ result.url }}</a></p>
-      </li>
-    </ul>
+  <div class="flex flex-col items-center">
+    <h1 class="text-3xl font-bold mb-4">Brave Search</h1>
+    <div class="flex items-center mb-4">
+      <input
+        type="text"
+        class="input input-bordered w-full max-w-lg"
+        v-model="query"
+        placeholder="Enter your search query"
+      >
+      <button
+        class="btn btn-primary ml-2"
+        @click="search"
+      >
+        Search
+      </button>
+    </div>
+    <div v-if="loading" class="mb-4">
+      Loading...
+    </div>
+    <div v-if="error" class="mb-4">
+      {{ error }}
+    </div>
+    <div v-if="results.length > 0">
+      <h2 class="text-2xl font-bold mb-4">Search Results</h2>
+      <ul class="list-none">
+        <li v-for="(result, index) in results" :key="index" class="mb-4">
+          <h3 class="text-lg font-bold">{{ result.title }}</h3>
+          <p><a :href="result.url">{{ result.url }}</a></p>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
