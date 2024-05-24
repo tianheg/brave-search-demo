@@ -41,9 +41,11 @@ const search = async () => {
   <div v-if="error">{{ error }}</div>
   <div v-if="results.length > 0">
     <h2>Search Results</h2>
-    <div v-for="(result, index) in results" :key="index">
-      <p>{{ result.title }}</p>
-      <p>{{ result.url }}</p>
-    </div>
+    <ul>
+      <li v-for="(result, index) in results" :key="index">
+        <h3>{{ result.title }}</h3>
+        <p><a :href="result.url">{{ result.url }}</a></p>
+      </li>
+    </ul>
   </div>
 </template>
