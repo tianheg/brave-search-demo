@@ -39,6 +39,7 @@ const search = async () => {
         class="input input-bordered w-full max-w-lg"
         v-model="query"
         placeholder="Enter your search query"
+        @keydown.enter="search"
       >
       <button
         class="btn btn-primary ml-2"
